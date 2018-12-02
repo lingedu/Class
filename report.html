@@ -1,64 +1,8 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>index slides</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<head><meta charset="utf-8" />
+<title>report</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -11774,133 +11718,59 @@ ul.typeahead-list > li > a {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
-}
-::-webkit-scrollbar
-{
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar *
-{
-  background:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-  background: #727272 !important;
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
 
-
-<div class="reveal">
-<div class="slides">
-<section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11912,43 +11782,43 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Paper-Summary">Paper Summary<a class="anchor-link" href="#Paper-Summary">&#182;</a></h2><p><strong>Circular statistics</strong> is a new skill to analyze the <strong>time pattern</strong> of the events in cyber 
-security. This paper use this skill to analyze the <strong>malware infection</strong> daily and weekly. After their experiment, they found the <strong>past hypothesis</strong> which claims that the attacks are <strong>uniformly distributed</strong> is not right. They want to utilize these attck patterns to build the <strong>risk metrics.</strong></p>
+<h2 id="Paper-Summary">Paper Summary<a class="anchor-link" href="#Paper-Summary">&#182;</a></h2><p>Circular statistics is a new skill to analyze the time pattern of the events in cyber 
+security. This paper use this skill to analyze the malware infection daily and weekly. After 
+their experiment, they found the past hypothesis which claims the attacks are uniformly distributed is not right. They want to utilize these attack patterns to build the risk metrics.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Background-and-Circular-statistic">Background and Circular statistic<a class="anchor-link" href="#Background-and-Circular-statistic">&#182;</a></h2><p><strong>Circular statistics</strong> has been applied in many area like <strong>public disorder, wind direction</strong> but rarely be adopted in cyber security research. The paper analyze the IP packet enter and exit monitoring points on networks.</p>
-<p>It is used to analyze the distribution of random variable which are <strong>cyclic in nature</strong>. We thus consider the time of attcking as a random variable, and map the day to a <strong>24-hour circle</strong>. Why we consider to use circular statistic here is because if we record at 23:30, 00:15, 00:30, 00:45, the mean value of these four times is 06:15 while the true mean time should allocate in 00:15.</p>
-<p>The data contain the source and destination <strong>IP address</strong> of the packet, <strong>time-stamp</strong> and the type of <strong>malware</strong> which has been observed. It also store domain name and geographical region associated to the IP address. We recognized a host be <strong>infected</strong> if it propagates the virus to others, often communicates to controller, or sends data to a receiver or sinkhole.</p>
+<h2 id="Background-and-Circular-statistic">Background and Circular statistic<a class="anchor-link" href="#Background-and-Circular-statistic">&#182;</a></h2><p>Circular statistics has been applied in many area like public disorder, wind direction but rarely be adopted in cyber security research. The paper analyze the IP packet enter and exit monitoring points on networks. It is used to analyze the distribution of random variable which are cyclic in nature. We thus consider the time of attcking as a random variable, and map the day to a 24-hour circle. Why we consider to use circular statistic here is because if we record at 23:30, 00:15, 00:30, 00:45, the mean value of these four times is 06:15 while the true mean time should allocate in 00:15.</p>
+<p>The data contain the source and destination IP address of the packet, time-stamp and the type of malware which has been observed. It also store domain name and geographical region associated to the IP address. We recognized a host be infected if it propagate the virus to others, often communicate to controller, or send data to a receiver or sinkhole.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Experiment">Experiment<a class="anchor-link" href="#Experiment">&#182;</a></h2><h3 id="Distribution-Hypothesis-Test">Distribution Hypothesis Test<a class="anchor-link" href="#Distribution-Hypothesis-Test">&#182;</a></h3><p>Previous studies claims that the <strong>uniformity hypothesis</strong> is the most basic null hypothesis in circular statistics. This paper did a bunch of experiment to test the hypothesis at their beginnig sections.</p>
-<h3 id="Data-source">Data source<a class="anchor-link" href="#Data-source">&#182;</a></h3><p>SPAMTEQ provides the malware datasets from 1000 hosts of business organization from 8th Aug. to 21 Aug 2016. It contains the <strong>IP</strong> address, <strong>ASN</strong> (automomous system number of the IP), <strong>Country, Domain, Timestamps, and Diagnostic</strong>. The paper select the top three countries which experience the most attacks and UK (the author's country).</p>
+<h2 id="Experiment">Experiment<a class="anchor-link" href="#Experiment">&#182;</a></h2><h3 id="Distribution-Hypothesis-Test">Distribution Hypothesis Test<a class="anchor-link" href="#Distribution-Hypothesis-Test">&#182;</a></h3><p>Previous studies claim that the uniformity hypothesis is the most basic null hypothesis in circular statistics. The paper did a bunch of experiment to test the hypothesis at their beginnig sections.</p>
+<h3 id="Data-source">Data source<a class="anchor-link" href="#Data-source">&#182;</a></h3><p>SPAMTEQ provides the malware datasets from 1000 hosts of business organization from 8th Aug. to 21 Aug 2016. It contains the IP address, ASN (automomous system number of the IP), Country, Domain, Timestamps, and Diagnostic. The paper select the top three countries which experience the most attacks and UK (the author's country).</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Linear-Histograms">Linear Histograms<a class="anchor-link" href="#Linear-Histograms">&#182;</a></h3><p>Histogram is an universal graphs to describe the <strong>frequency distribution</strong> of attacks in cyber security. The graph below shows India has lower attacks in their <strong>Independence Day(Aug.15)</strong>. China shows that the peak time of attack in either early morning or early afternoon, and receive less attacks in weekends. Vietnam had three peak periods a day, and the attacks in <strong>weekends</strong> are less than weekdays. In the constract, UK has relatively <strong>irregular</strong> pattern; it shows multimodal variantion.</p>
+<h3 id="Linear-Histograms">Linear Histograms<a class="anchor-link" href="#Linear-Histograms">&#182;</a></h3><p>Histogram is an universal graphs to describe the frequency distribution of attacks in cyber security. The graph below shows India has lower attacks in their Independence Day(Aug.15). China shows that the peak time of attacks in either early morning or early afternoon, and receive less attacks in weekends. Vietnam had three peak a day, and the attacks in weekend are less than weekdays. In the constract, UK has relatively irregular pattern; it shows multimodal variantion.</p>
 <table>
 <thead><tr>
 <th>Inida</th>
@@ -11969,12 +11839,12 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Daily-Circles">Daily Circles<a class="anchor-link" href="#Daily-Circles">&#182;</a></h3><p>In daiy cycles, they <strong>aggregate the 2-week data into cycles</strong> to observe the active time during a day. India shows that the peak time arised around 9:30 to 15:00 and fall all the way down at 2:00. Table below shows the peak time of each country. We can see that the attack time pattern is similar to the <strong>daily working</strong> pattern in the society.</p>
+<h3 id="Daily-Circles">Daily Circles<a class="anchor-link" href="#Daily-Circles">&#182;</a></h3><p>In daiy cycles, they aggregate the 2-week data into cycles to observe the active time during a day. India shows that the peak time arised around 9:30 to 15:00 and fall all the way down at 2:00. Table below shows the peak time of each country. We can see that the attack time pattern is similar to the daily working pattern in the society.</p>
 <table>
 <thead><tr>
 <th>Inida &amp; China</th>
@@ -11991,12 +11861,12 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Helix-Graph">Helix Graph<a class="anchor-link" href="#Helix-Graph">&#182;</a></h3><p>Since there may <strong>loss of information</strong> by <strong>aggregating</strong> the data together, we use the helix graph to show the data in 168 hours for 7 days (from 8th Aug to 14th Aug). In the India helix graph, the darker colors show up in the midnight, i.e. the attackers are not active that time. According to the gradual colour changes, we can observe the variation more intuitively.</p>
+<h3 id="Helix-Graph">Helix Graph<a class="anchor-link" href="#Helix-Graph">&#182;</a></h3><p>Since there may loss of information by aggregating the data together, we use the helix graph to show the data in 168 hours for 7 days (from 8th Aug to 14th Aug). In the India helix graph, the darker colors show up in the midnight, i.e. the attackers are not active that time. According to the gradual colour changes, we can observe the variation more intuitively.</p>
 <table>
 <thead><tr>
 <th>Inida &amp; China</th>
@@ -12013,12 +11883,12 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Weekly-Circle">Weekly Circle<a class="anchor-link" href="#Weekly-Circle">&#182;</a></h3><p>India and Vetnam have the similar weekly patterns. All China cycles show the <strong>high similarity</strong> in the time variation. The cycles in UK is much more <strong>irregular</strong>; pattern from Monday to Sunday are not really similar. The time pattern variations shows that attacks are active in working hours during working days including Saturday. <strong>Sunday pattern</strong>, instead, is different from other weekdays. The average attacks on Sunday are less and they decrease around 1300 to 1500, which is acutally the peak period in the weekdays. The attack frequency in UK is much less than other threee countries.</p>
+<h3 id="Weekly-Circle">Weekly Circle<a class="anchor-link" href="#Weekly-Circle">&#182;</a></h3><p>India and Vetnam have the similar weekly patterns. All China cycles show the high similarity in the time variation. The cycles in UK is much more irregular; pattern from Monday to Sunday are not really similar. The time pattern variations show that attacks are active in working hours during working days including Saturday. Sunday pattern, instead, is different from other weekdays. The average attacks on Sunday are less and they decrease around 1300 to 1500, which is acutally the peak period in the weekdays. The attack frequency in UK is much less than other threee countries.</p>
 <table>
 <thead><tr>
 <th>Inida</th>
@@ -12035,7 +11905,7 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12047,12 +11917,12 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Comparisons-between-Different-Malwares">Comparisons between Different Malwares<a class="anchor-link" href="#Comparisons-between-Different-Malwares">&#182;</a></h3><p>The paper compares the <strong>two most frequent malwares</strong> in these four countries and finds the time patterns of different malwares have <strong>no common distribution</strong> according to the Mardia-Watson-Wheeler test.</p>
+<h3 id="Comparisons-between-Different-Malwares">Comparisons between Different Malwares<a class="anchor-link" href="#Comparisons-between-Different-Malwares">&#182;</a></h3><p>The paper compares the two most frequent malwares in these four contries and finds that the time patterns of different malwares have no common distribution according to the Mardia-Watson-Wheeler test.</p>
 <table>
 <thead><tr>
 <th>Inida</th>
@@ -12073,117 +11943,54 @@ security. This paper use this skill to analyze the <strong>malware infection</st
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>This paper shows that how circular statistics can be applied to the cyber security. It visualizes the daily and weekly <strong>time pattern</strong> such that we can <strong>infer the malwares' behaviors</strong>, which can help allocate the resources to mitigate attacks in an efficient manner.</p>
-<p>The paper points out the hypothesis of uniform distribution of attacks is not necessarily right. Malwares can be active in different time periods during a day and the <strong>time patterns</strong> may related to the working time of human-beings. Understand the time patterns of the malwares can help the decision makers to <strong>secure the data</strong> more efficiently and <strong>lower down the cost.</strong></p>
-<p><strong>However</strong>, the paper only analyze a very <strong>short peroid</strong> of time (Aug 8th-16th 2016) which may not be representative. It needs more data to evaluate the real varaiation og malwares.</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>This paper shows that how circular statistics can be applied to the cyber security. It visualizes the daily and weekly time pattern such that we can infer the malwares' behaviors, which can help allocate the resources to mitigate attacks in an efficient manner.</p>
+<p>The paper points out the hypothesis of uniform distribution of attacks is not necessarily right. Malwares can be active in different time periods during a day and the time patterns may related to the working time of human-beings. This finding can help the decision makers to secure the data more efficiently and lower down the cost.</p>
+<p>However, the paper only analyze a very short peroid of time (Aug 8th-16th 2016) which may not be representative. It needs more data to evaluate the real varaiation of malwares.</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Security-and-Economics?">Security and Economics?<a class="anchor-link" href="#Security-and-Economics?">&#182;</a></h1><ul>
-<li>Consider how to use the results of analysis of malwares' attacks to <strong>cut down the cost</strong> in security. </li>
-<li>Consider the case when the malwares <strong>successfully break down</strong> their targets; what may be the cost?</li>
+<li>Consider how to use the results of analysis of malwares' attacks to cut down the cost in security. </li>
+<li>Consider the case when the malwares successfully break down their targets; what may be the cost?</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Where-is-Economics">Where is Economics<a class="anchor-link" href="#Where-is-Economics">&#182;</a></h3><p>Since the paper make the visualization of the <strong>variation</strong> of the malware attacks in a cyclic time pattern, it can help users to recogize the peek and down time of the attacks. Security IT thus can <strong>allocate proper resource</strong> to pretect data from attacks, which can help to <strong>reduce the  cost</strong>.</p>
-<p>On the other hand, the paper shows that the time patterns are also related to the total amount of attacks. The attacks shows bimodality when a large volume of attacks and present multi-modelity when the attacks happening a lower rate. <strong>Understand the distributions</strong> of the patterns of the attacks can help improve the security and <strong>save redundant cost.</strong></p>
+<h3 id="Where-is-Economics">Where is Economics<a class="anchor-link" href="#Where-is-Economics">&#182;</a></h3><p>Since the paper make the visualization of the variation of the malware attacks in a cyclic time pattern, it can help users to recogize the peek and down time of the attacks. Security IT thus can allocate proper resource to pretect data from attacks, which can help to reduce the  cost.</p>
+<p>On the other hand, the paper shows that the time patterns are also related to the total amount of attacks. The attacks shows bimodality when a large volume of attacks and present multi-modelity when the attacks happening a lower rate. Understand the distributions of the patterns of the attacks can help improve the security and save redundant cost.</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Applied-Ecomomic-Models">Applied Ecomomic Models<a class="anchor-link" href="#Applied-Ecomomic-Models">&#182;</a></h3><p>We can use the <strong>"Matching problem: Valuations"</strong> in class. If a product can alloate the resource automatically with the time varations of the attackers, the <strong>valuation of the product</strong> will increase. While users are <strong>willing to paying more</strong> for the product, the product can <strong>bring more surplus</strong> for its company.</p>
-<p><strong>On the other hand, users (or companies) who buy the product</strong> or adopt the circular statistic can protect the data in an efficient manner. It will help the company to <strong>cut the cost</strong> on security and <strong>reduce the risk</strong> of losing data. In conclude, the study can help each individaul, company and the whole country <strong>promote</strong> their performance on <strong>both security and ecomomics.</strong></p>
+<h3 id="Applied-Ecomomic-Models">Applied Ecomomic Models<a class="anchor-link" href="#Applied-Ecomomic-Models">&#182;</a></h3><p>We can use the "Matching problem: Valuations" in class. If a product can alloate the resource automatically with the time varations of the attackers, the valuation of the product will increase. While users are willing to paying more for the product, the product can bring more surplus for its company. On the other hand, users(or companies) who buy the product or adopt the circular statistic can protect the data in an efficient manner. It will help the company to cut the cost on security and reduce the risk of losing data. In conclude, the study can help each individaul, company and the whole country promote their performance on both security and ecomomics.</p>
 
 </div>
 </div>
-</div></section></section>
 </div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            transition: "slide",
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        function setScrollingSlide() {
-            var scroll = false
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
-        }
-
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
-
-    }
-
-);
-</script>
-
+    </div>
+  </div>
 </body>
+
+ 
 
 
 </html>
